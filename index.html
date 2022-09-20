@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Stack Implent Using Array</title>
+</head>
+<body>
+    <h1>Stack Implementation using an Array<hr><h1>
+    <div id="demo">
+    <p id="instruct">Enter value in box and click on any button below to perform whatever action you want to implement on stack</p>
+    <ul>
+    <li>push</li>
+      <li>pop</li>
+      <li>peek</li>
+      <li>isEmpty</li>
+      <li>size</li>
+   <li>clear</li>
+   <li>display</li>
+  
+   </ul>
+    </div>
+    
+    <div class="choices">
+       <button id="but1">push</button> 
+       <button id="but2">pop</button>
+         <button id="but3">display</button>
+          <button id="but4">peek</button>
+         <button id="but5">isEmpty</button>
+           <button id="but6">size</button>
+            <button id="but7" >clear</button>
+                        
+    </div>
+    
+    <div class="visual">
+    <p id="toread"></p>
+     <div id="showstack">
+        
+    </div>
+    
+    </div>
+    
+    
+    
+    
+    <div class="show">
+    <input id="toadd" type="text" placeholder="enter value to push">
+        
+    </div>
+    
+    
+    
+    
+    
+    <script>
+    let choices=document.querySelector(".choices")
+    let visual=document.querySelector(".visual")
+    
+    var toread=document.getElementById("toread")
+    
+    var show=document.querySelector(".show")
+   
+   
+   var button=document.querySelector("button")
+  
+   var showstack=document.getElementById("showstack")
+   
+//var toadd=document.getElementById ("toadd")
+
+
+var toadd=document.getElementById("toadd").value
+ 
+    
+    
+    
+    
+    
+        class Stack {
+        constructor() {
+            this.items = [];
+            this.top = -1;
+        }
+    }
+   
+   //instantiate
+   let stackup = new Stack()
+
+
+/*code for push*/
+stackup.push = function (toadd) {
+        this.items[this.top] =toadd
+        this.top += 1
+    }
+
+    /*code for display */
+stackup.display = function () {
+        if (this.top < 0) {
+            return "Stack is empty"
+        }
+        else{
+        showstack.innerHTML="items on stack are:<br/>"
+        for (let i =this.top-1; i>-2; i--) {
+      showstack.innerHTML += this.items[i] + " <br />"
+        }
+        }
+        
+        
+        
+        
+    }
+  
+/*code for pop*/    
+
+    stackup.pop = function () {
+        if (this.top < 0) {
+     return "no elements left"
+        }
+        else{
+      var temp= this.items[this.top-1]
+        //--this.items.length 
+        //return temp
+       this.top-=1
+        return temp
+    }
+    
+  
+    }
+ /*code for peek*/
+ stackup.peek=function(){
+     if(this.top<0){
+         toread.innerHTML="stack is empty"
+     }
+     else{
+   var temp=this.items[this.top-1] 
+     return temp
+ }
+ 
+ 
+ }
+ 
+ /*code for isEmpty*/
+ stackup.isEmpty=function(){
+     if(this.top<0){
+         showstack.innerHTML=true
+     }
+     else{
+      showstack.innerHTML=false
+     }
+ }
+ 
+ 
+ 
+   
+//code for size
+   stackup.size=function(){
+       var count=0
+      var trav=-1
+      while(trav<=this.top-1){
+          count++;
+          
+          trav=trav+1
+      }
+   
+   toread.innerHTML=count +" "+ "is the size of stack"
+   }
+   
+   
+   //for clear
+   
+   stackup.clear=function(){
+   this.top=-1
+   toread.innerHTML="stack is cleared"
+    }
+    
+ 
+ 
+ /*event listeners via delegation*/
+ 
+    choices.addEventListener("click",clicked)
+    
+            
+   function clicked(e){
+       if(e.target.matches("button")){
+           var button=e.target
+        
+          
+   
+   
+   switch(button){
+   //for push
+  case but1:
+ 
+var toadd=document.getElementById("toadd").value 
+toread.innerHTML = toadd +" " +" is added to the stack"
+        stackup.push(toadd)
+   break;
+       
+       
+  //for pop
+  case but2:
+  toread.innerHTML = stackup.pop() + " is popped from stack"
+  
+       break;
+       
+       
+     //for display  
+   case but3:
+   stackup.display()
+       break;    
+       
+      
+      //for peek
+       case but4:
+    toread.innerHTML=stackup.peek()+" "+"is top element in stack"
+       break;
+    
+     //check if empty  
+ case but5:
+ 
+stackup.isEmpty()
+
+ break;
+ 
+ //for size
+ case but6:
+ stackup.size()
+ break;
+ 
+ //for clear
+case but7:
+stackup.clear()
+break;
+ 
+ 
+  }
+  
+    
+   }   
+     
+  }         
+    
+   
+    </script>
+    </body>
+</html>

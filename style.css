@@ -1,0 +1,96 @@
+body {
+    color:yellow;
+    background-color:purple;
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+    display:grid;
+    justify-content: center;
+}
+
+
+.choices{
+    margin-bottom:50px;
+    
+}
+
+#toadd{
+    margin-top:30px;
+    height:50px;
+    font-size:20px;
+    border:white;
+    background-color:yellow;
+    color: purple;
+    text-align: center;
+    
+}
+
+.show{
+    margin-top:40px;
+    display:grid;
+    position:relative;
+    bottom:180px;
+    
+}
+
+.forview{
+    outline:none ;
+    border:none;
+}
+button{
+    padding:10px;
+    margin:4px;
+    background-color:yellow;
+    color:purple;
+}
+#showstack{
+    margin-top:50px;
+    font-size:25px;
+    margin-bottom:120px;
+}
+
+
+#toread{
+    outline:none;
+    border:none;
+    font-size:25px;
+}
+
+.visual{
+    display:grid;
+}
+h1{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#demo{
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width:600px) {
+    body{
+        font-size: 10px;
+        
+    }
+
+    h1{
+        text-align: center;
+    }
+    
+}
+
+
+@media screen and (max-width:496px) {
+    body{
+        font-size: 7px;
+        
+    }
+
+    h1{
+        text-align: center;
+    }
+    
+}
+
+
