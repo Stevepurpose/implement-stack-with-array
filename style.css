@@ -78,6 +78,12 @@ h1{
         text-align: center;
     }
     
+button{
+    padding:5px;
+    margin:3px;
+    background-color:yellow;
+    color:purple;
+}
 }
 
 
@@ -90,6 +96,12 @@ h1{
     h1{
         text-align: center;
     }
+button{
+    padding:5px;
+    margin:3px;
+    background-color:yellow;
+    color:purple;
+}
     
 }
 
