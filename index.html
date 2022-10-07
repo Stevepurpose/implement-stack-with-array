@@ -155,15 +155,15 @@ stackup.display = function () {
    
 //code for size
    stackup.size=function(){
-       var count=0
-      var trav=-1
-      while(trav<=this.top-1){
-          count++;
+       
+      var trav=0
+      while(trav<=this.top){
           
-          trav=trav+1
+          
+          trav+=1
       }
    
-   toread.innerHTML=count +" "+ "is the size of stack"
+   toread.innerHTML=trav +" "+ "is the size of stack"
    }
    
    
